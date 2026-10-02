@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Шашки для двух игроков на одном устройстве. Играйте прямо в браузере без установки.">
+    <title>Шашки — игра для двоих</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">Для двух игроков · на одном устройстве</p>
+          <h1>Шашки</h1>
+        </div>
+        <button id="new-game" class="new-game" type="button">Новая игра</button>
+      </header>
+
+      <section class="game-info" aria-label="Состояние игры">
+        <p id="status" role="status" aria-live="polite" aria-atomic="true">Ход белых.</p>
+        <div class="score" aria-label="Шашек на доске">
+          <span><span class="score-piece white" aria-hidden="true"></span>Белые <strong id="white-count">12</strong></span>
+          <span><span class="score-piece black" aria-hidden="true"></span>Чёрные <strong id="black-count">12</strong></span>
+        </div>
+      </section>
+
+      <div class="board-frame">
+        <div id="board" class="board" role="group" aria-label="Шашечная доска 8 на 8" aria-describedby="controls"></div>
+        <div class="file-labels" aria-hidden="true"><span>a</span><span>b</span><span>c</span><span>d</span><span>e</span><span>f</span><span>g</span><span>h</span></div>
+      </div>
+
+      <section class="instructions" aria-labelledby="rules-title">
+        <h2 id="rules-title">Как играть</h2>
+        <p id="controls">Выберите свою шашку, затем нажмите на подсвеченную клетку. Белые ходят первыми.</p>
+        <ul>
+          <li>Обычная шашка ходит на одну клетку по диагонали вперёд, а бьёт в обе стороны.</li>
+          <li>Если есть взятие, оно обязательно. Продолжайте серию той же шашкой, пока можно бить.</li>
+          <li>На последнем ряду шашка сразу становится дамкой, в том числе во время взятия. Дамка ходит по диагонали на любое расстояние.</li>
+          <li>Побеждает тот, у кого соперник остался без шашек или без возможных ходов.</li>
+        </ul>
+        <p class="keyboard-hint">Клавиатура: Tab — выбор клетки, Enter или пробел — нажатие. ★ — дамка.</p>
+      </section>
+      <noscript><p class="no-script">Чтобы играть, включите JavaScript в браузере.</p></noscript>
+    </main>
+  </body>
+</html>
